@@ -9,8 +9,17 @@ if (reservationForm) {
         const time = document.querySelector("#time").value;
         const guests = document.querySelector("#guests").value;
 
+        if(document.querySelector("#requirements").value == ""){
+           requirements = "<No Requirement>";
+        }
+        else{
+            requirements = document.querySelector("#requirements").value; 
+        }
+
         const reservationMessage = document.querySelector("#reservation-message");
-        reservationMessage.textContent = `Thank you, ${name}! Your reservation for ${guests} on ${date} at ${time} is confirmed.`;
+
+
+        reservationMessage.textContent = `Thank you, ${name}!  ${email} Your reservation for ${guests} on ${date} at ${time} Your Speciel Requirement ${requirements} has been noted`;
     });
 }
 
@@ -36,3 +45,107 @@ darkModeToggle.addEventListener("click", () => {
         localStorage.setItem("darkMode", "disabled");
     }
 });
+
+
+let tasks = [];
+
+// Add Task
+document.querySelector("#new-task-form").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const task = {
+        id: Date.now(),
+        name: document.querySelector("#task-name").value,
+        description: document.querySelector("#task-desc").value,
+        dueDate: document.querySelector("#task-date").value,
+        status: "pending"
+    };
+
+    tasks.push(task);
+    displayTasks();
+    event.target.reset();
+});
+
+// Display Tasks
+function displayTasks() {
+    const tableBody = document.querySelector("#task-table-body");
+    tableBody.innerHTML = "";
+
+    tasks.forEach(task => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${task.name}</td>
+            <td>${task.description}</td>
+            <td>${task.dueDate}</td>
+            <td>${task.status}</td>
+            <td>
+                <button onclick="editTask(${task.id})">Edit</button>
+                <button onclick="deleteTask(${task.id})">Delete</button>
+                <button onclick="markCompleted(${task.id})">Complete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Edit Task
+function editTask(id) {
+    const task = tasks.find(task => task.id === id);
+    document.querySelector("#task-name").value = task.name;
+    document.querySelector("#task-desc").value = task.description;
+    document.querySelector("#task-date").value = task.dueDate;
+
+    deleteTask(id);
+}
+
+// Delete Task
+function deleteTask(id) {
+    tasks = tasks.filter(task => task.id !== id);
+    displayTasks();
+}
+
+// Mark Task as Completed
+function markCompleted(id) {
+    const task = tasks.find(task => task.id === id);
+    if (task) {
+        task.status = "completed";
+        displayTasks();
+    }
+}
+
+// Filter Tasks
+function filterTasks(status) {
+    const filteredTasks = status === "all" ? tasks : tasks.filter(task => task.status === status);
+    const tableBody = document.querySelector("#task-table-body");
+    tableBody.innerHTML = "";
+
+    filteredTasks.forEach(task => {
+        const row = document.createElement("tr");
+        row.innerHTML = `
+            <td>${task.name}</td>
+            <td>${task.description}</td>
+            <td>${task.dueDate}</td>
+            <td>${task.status}</td>
+            <td>
+                <button onclick="editTask(${task.id})">Edit</button>
+                <button onclick="deleteTask(${task.id})">Delete</button>
+                <button onclick="markCompleted(${task.id})">Complete</button>
+            </td>
+        `;
+        tableBody.appendChild(row);
+    });
+}
+
+// Sort Tasks
+function sortTasks() {
+    const sortValue = document.querySelector("#sort-tasks").value;
+    tasks.sort((a, b) => {
+        if (sortValue === "name") {
+            return a.name.localeCompare(b.name);
+        } else if (sortValue === "date") {
+            return new Date(a.dueDate) - new Date(b.dueDate);
+        }
+    });
+    displayTasks();
+}
+
