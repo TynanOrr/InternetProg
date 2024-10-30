@@ -1,14 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Restaurant</title>
+    <title>Meat Buffet</title>
     <link rel="stylesheet" href="css/styles.css">
     <script src="js/script.js" defer></script>
 </head>
 <body>
+    
     <!-- Header and Navigation -->
     <header>
         <img src="assets/meatlogo.png" alt="MeatLogo" style="width:10%;height:10%;">
@@ -54,13 +54,19 @@
 
      <!-- Menu Section -->
      <section id="about">
-        <h2>Our Staff</h2>
+        <h2>About This</h2>
         <div class="center-container">
-            <h3>Staff</h3>
-            <p>Get to know our 2 Head Chefs </p>
+            <h3>and Me</h3>
+            <p>Get to know the mastermind behind the Meat Buffet </p>
             <a href="about.html" class="reserve-btn">About Us</a>
         </div>
     </section>
+
+        <!-- Task activity -->
+        <section onload="displayLatestTaskAction();">
+            <h2>Latest Task Activity</h2>
+            <p id="latest-task-message">Loading latest activity...</p>
+        </section>
 
     <!-- Complaint Section -->
     <section id="complaint">
