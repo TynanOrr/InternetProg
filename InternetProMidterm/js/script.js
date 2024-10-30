@@ -64,6 +64,7 @@ document.querySelector("#new-task-form").addEventListener("submit", function(eve
     tasks.push(task);
     displayTasks();
     event.target.reset();
+    saveLatestTaskAction(task.name, "added");
 });
 
 // Display Tasks
@@ -94,7 +95,6 @@ function editTask(id) {
     document.querySelector("#task-name").value = task.name;
     document.querySelector("#task-desc").value = task.description;
     document.querySelector("#task-date").value = task.dueDate;
-
     deleteTask(id);
 }
 
@@ -102,6 +102,8 @@ function editTask(id) {
 function deleteTask(id) {
     tasks = tasks.filter(task => task.id !== id);
     displayTasks();
+    const task = tasks.filter(task => task.id !== id);
+    saveLatestTaskAction(task.name, "added");
 }
 
 // Mark Task as Completed
@@ -111,6 +113,7 @@ function markCompleted(id) {
         task.status = "completed";
         displayTasks();
     }
+    saveLatestTaskAction(task.name, "completed");
 }
 
 // Filter Tasks
@@ -149,3 +152,35 @@ function sortTasks() {
     displayTasks();
 }
 
+//Latest Activity
+
+function saveLatestTaskAction(taskName, action) {
+    const latestTask = {
+        name: taskName,
+        action: action,
+        //timestamp: new Date().toISOString() // To help us if needed for further sorting
+    };
+    localStorage.setItem("latestTask", JSON.stringify(latestTask));
+}
+
+    function displayLatestTaskAction() {
+        const latestTask = JSON.parse(localStorage.getItem("latestTask"));
+
+        const CurrentTask = document.querySelector("#latest-task-message");
+        CurrentTask.textContent = latestTask;
+    }
+
+// Carousel Slides
+window.onload = function() {
+let currentIndex = 0;
+const texts = document.querySelector(".carousel-texts");
+const items = document.querySelectorAll(".slide");
+
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % 5;
+  const slideWidth = items[0].clientWidth;
+  texts.style.transform = `translateX(${-index * slideWidth}px)`;
+}
+setInterval(nextSlide, 1000);
+};
