@@ -1,42 +1,55 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Task Management</title>
+    <title>Local Restaurant</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-   <!-- Header and Navigation -->
+    <!-- Header and Navigation -->
     <header>
-        <h1>Welcome to the Meat Buffet</h1>
+        <img src="assets/meatlogo.png" alt="Bunch of Meat" style="width:10%;height:10%;">
+        <h1>Please provide any Questions or Complaints </h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="tasks.html">Reservations</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tasks.html">Reports</a></li>
+                <li><a href="contact.html">Reservations</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
+
+            <select onchange= "window.location = this.value;"> 
+                <option value="" selected="selected">Navigation</option>
+                <option value="index.html">Home</option> 
+                <option value="menu.html">Menu</option> 
+                <option value="tasks.html">Reports</option> 
+                <option value="contact.html">Reservations</option> 
+                <option value="about.html">About Us</option> 
+              </select>
         </nav>
         <button id="dark-mode-toggle">Dark Mode</button>
     </header>
-    <h1>Task Management</h1>
+
+    <h1>Tell us anything</h1>
 
     <!-- Task Form -->
     <section id="task-form">
-        <h2>Add New Task</h2>
+        <h2>Add New Message</h2>
         <form id="new-task-form">
-            <label for="task-name">Task Name</label>
+            <label for="task-name">Name of Report</label>
             <input type="text" id="task-name" required>
             
             <label for="task-desc">Description</label>
             <textarea id="task-desc" required></textarea>
             
-            <label for="task-due-date">Due Date</label>
-            <input type="date" id="task-due-date" required>
+            <label for="task-date">Date Created</label>
+            <input type="date" id="task-date" required>
             
-            <button type="submit">Add Task</button>
+            <button type="submit">Add Report</button>
         </form>
     </section>
 
@@ -59,9 +72,9 @@
         <table>
             <thead>
                 <tr>
-                    <th>Task Name</th>
+                    <th>Report Name</th>
                     <th>Description</th>
-                    <th>Due Date</th>
+                    <th>Date Created</th>
                     <th>Status</th>
                     <th>Actions</th>
                 </tr>
@@ -70,6 +83,12 @@
         </table>
     </section>
 
-    <script src="script.js"></script>
 </body>
+    <!-- Footer -->
+    <footer>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:5%;height:5%;">
+        <p>&copy; 2024 Meat Buffet. All rights reserved.</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: Meat@restaurant.com</p>
+    </footer>
 </html>
