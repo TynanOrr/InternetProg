@@ -1,24 +1,81 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <title>title</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
-        <!-- Header and Navigation -->
+    <!-- Header and Navigation -->
     <header>
-        <h1>Welcome to the Meat Buffet</h1>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:10%;height:10%;">
+        <h1>About Me</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="tasks.html">Reservations</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tasks.html">Reports</a></li>
+                <li><a href="contact.html">Reservations</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
+
+            <select onchange= "window.location = this.value;"> 
+                <option value="" selected="selected">Navigation</option>
+                <option value="index.html">Home</option> 
+                <option value="menu.html">Menu</option> 
+                <option value="tasks.html">Reports</option> 
+                <option value="contact.html">Reservations</option> 
+                <option value="about.html">About Us</option> 
+              </select>
         </nav>
         <button id="dark-mode-toggle">Dark Mode</button>
     </header>
+
+
+ <ul>
+    <li><p> This application is for an all you can eat reastrant on top of Mount Everest that loves meat.</p></li>
+    <li><p>It has a home page with links and an overview.</p></li>
+    <li><p>A task page where customers can write complaints or questions and manage them.</p></li>
+    <li><p>A contact page where they can input their information to book a reservation and see the google map.</p></li>
+    <li><p>And this about page with a nonefunctioning Carousel that i gave up on. </p></li>
+    <li><p>There is a Dark Mode, Navigation menu that turns into a single bar when the screen is small and footer with contact info on every page. </p></li>
+    <li><p>I am Tynan and since we dont have teams I did everything.</p></li>
+        <img src="assets/Me.jpg" alt="Me" style="width:20%;height:20%;">
+</ul>
+
+
+
+
+
+
+    <div class="carousel">
+        <div class="carousel-texts">
+            <div class="slide">A dozen different attemps at carousel none worked</div>
+            <div class="slide">This was my last attempt at the simplist version I could find</div>
+            <div class="slide">Very Hard</div>
+            <div class="slide">FOOOOOOOOOOD</div>
+            <div class="slide">GitHub Hates Me</div>
+            <div class="slide">Thanks for giving us extra time</div>
+        </div>  
+    </div>  
+
+
+
+
+
+
     
+
 </body>
+    <!-- Footer -->
+    <footer>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:5%;height:5%;">
+        <p>&copy; 2024 Meat Buffet. All rights reserved.</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: Meat@restaurant.com</p>
+    </footer>
 </html>
+
+

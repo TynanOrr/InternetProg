@@ -3,21 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Reservations - Local Restaurant</title>
+    <title>Reservations</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
     <!-- Header and Navigation -->
     <header>
-        <h1>Welcome to the Meat Buffet</h1>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:10%;height:10%;">
+        <h1>Make a Reservation</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="tasks.html">Reservations</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tasks.html">Reports</a></li>
+                <li><a href="contact.html">Reservations</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
+
+            <select onchange= "window.location = this.value;"> 
+                <option value="" selected="selected">Navigation</option>
+                <option value="index.html">Home</option> 
+                <option value="menu.html">Menu</option> 
+                <option value="tasks.html">Reports</option> 
+                <option value="contact.html">Reservations</option> 
+                <option value="about.html">About Us</option> 
+              </select>
         </nav>
         <button id="dark-mode-toggle">Dark Mode</button>
     </header>
@@ -28,6 +39,9 @@
         <form id="reservation-form">
             <label for="name">Name</label>
             <input type="text" id="name" required>
+
+            <label for="requirements">Speciel Requirements</label>
+            <input type="text" id="requirements">
             
             <label for="email">Email</label>
             <input type="email" id="email" required>
@@ -46,11 +60,27 @@
         <p id="reservation-message"></p>
     </section>
 
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d42869.37057241623!2d86.89576849148493!3d27.98860357323482!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39e854a215bd9ebd%3A0x576dcf806abbab2!2sMt%20Everest!5e0!3m2!1sen!2sgr!4v1730286915510!5m2!1sen!2sgr" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>"
+
+    
+     <!-- Contact Section -->
+    <section id="contact">
+        <h2>Follow Us</h2>
+        <p>Location: Top of Mount Everest</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: Meat@restaurant.com</p>
+        <p>Facebook: bestrestaurant4ever</p>
+        <p>Instagram: TotallyawusomeMeat</p>
+    </section>
+    
+
+
+</body>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Local Restaurant. All rights reserved.</p>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:5%;height:5%;">
+        <p>&copy; 2024 Meat Buffet. All rights reserved.</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: Meat@restaurant.com</p>
     </footer>
-
-    <script src="js/script.js"></script>
-</body>
 </html>

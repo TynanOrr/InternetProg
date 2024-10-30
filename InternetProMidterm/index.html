@@ -3,29 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Local Restaurant</title>
+    <title>Meat Buffet</title>
     <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
 </head>
 <body>
+    
     <!-- Header and Navigation -->
     <header>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:10%;height:10%;">
         <h1>Welcome to the Meat Buffet</h1>
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="menu.html">Menu</a></li>
-                <li><a href="tasks.html">Reservations</a></li>
-                <li><a href="contact.html">Contact</a></li>
+                <li><a href="tasks.html">Reports</a></li>
+                <li><a href="contact.html">Reservations</a></li>
                 <li><a href="about.html">About Us</a></li>
             </ul>
+
+            <select onchange= "window.location = this.value;"> 
+                <option value="" selected="selected">Navigation</option>
+                <option value="index.html">Home</option> 
+                <option value="menu.html">Menu</option> 
+                <option value="tasks.html">Reports</option> 
+                <option value="contact.html">Reservations</option> 
+                <option value="about.html">About Us</option> 
+              </select>
         </nav>
         <button id="dark-mode-toggle">Dark Mode</button>
     </header>
 
-    <!-- Hero Section -->
+    <!-- Intro Section -->
     <section id="home">
+        <img src="assets/Meat.jpg" alt="Bunch of Meat" style="width:20%;height:20%;">
         <h2>Experience the best food in town</h2>
-        <p>Reserve a table and enjoy delicious meals.</p>
+        <p>Reserve a table for an hour and enjoy all the meat you can eat.</p>
         <a href="contact.html" class="reserve-btn">Make a Reservation</a>
     </section>
 
@@ -33,44 +46,43 @@
     <section id="menu">
         <h2>Our Menu</h2>
         <div class="menu-category">
-            <h3>Appetizers</h3>
-            <p>Delicious starters to begin your meal</p>
+            <h3>Meat</h3>
+            <p>Salads and Drinks are also Available</p>
             <a href="menu.html" class="reserve-btn">Full Menu Here</a>
         </div>
     </section>
 
      <!-- Menu Section -->
      <section id="about">
-        <h2>Our Staff</h2>
+        <h2>About This</h2>
         <div class="center-container">
-            <h3>Staff</h3>
-            <p>Get to know our 3 Head Chefs </p>
+            <h3>and Me</h3>
+            <p>Get to know the mastermind behind the Meat Buffet </p>
             <a href="about.html" class="reserve-btn">About Us</a>
         </div>
     </section>
 
+        <!-- Task activity -->
+        <section onload="displayLatestTaskAction();">
+            <h2>Latest Task Activity</h2>
+            <p id="latest-task-message">Loading latest activity...</p>
+        </section>
+
     <!-- Complaint Section -->
     <section id="complaint">
-        <h2>Have a Problem, Tell us</h2>
+        <h2>Have a Problem? Tell us here</h2>
         <div class="complaint-category">
             <p> </p>
             <a href="tasks.html" class="reserve-btn">File Report</a>
         </div>
     </section>
-    <!-- Contact Section -->
-    <section id="contact">
-        <h2>Contact Us</h2>
-        <p>Location: 123 Main St, Hometown</p>
-        <p>Phone: (123) 456-7890</p>
-        <p>Email: info@localrestaurant.com</p>
-    </section>
 
-
-
-    <script src="js/script.js"></script>
 </body>
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 Local Restaurant. All rights reserved.</p>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:5%;height:5%;">
+        <p>&copy; 2024 Meat Buffet. All rights reserved.</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: Meat@restaurant.com</p>
     </footer>
 </html>
