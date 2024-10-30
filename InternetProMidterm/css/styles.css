@@ -1,0 +1,163 @@
+/* Reset and Base Styles */
+* {
+    margin: 5;
+    padding: 5;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: var(--text-color);
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+/* Light Theme (Default) */
+:root {
+    --background-color: #ffffff;
+    --text-color: #333333;
+    --primary-color: #d35400;
+    --table-border-color: #ddd;
+}
+
+/* Dark Theme */
+body.dark-mode {
+    --background-color: #1e1e1e;
+    --text-color: #f5f5f5;
+    --primary-color: #ff6f00;
+    --table-border-color: #444;
+}
+
+/* Header Styles */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: var(--primary-color);
+    padding: 10px;
+    color: var(--background-color);
+}
+
+header h1 {
+    font-size: 24px;
+}
+
+header button {
+    padding: 8px 12px;
+    font-size: 14px;
+    color: var(--background-color);
+    background-color: var(--text-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Section Styles */
+h1, h2 {
+    color: var(--text-color);
+    margin-bottom: 10px;
+}
+
+section {
+    margin-bottom: 20px;
+    padding: 10px;
+}
+
+/* Task Form Styles */
+#task-form {
+    margin-bottom: 20px;
+    background-color: var(--background-color);
+    border: 1px solid var(--table-border-color);
+    padding: 20px;
+    border-radius: 4px;
+}
+
+#task-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-color);
+}
+
+#task-form input,
+#task-form textarea {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid var(--table-border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+#task-form button {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Filter and Sort Section */
+#filter-sort button {
+    padding: 8px 12px;
+    margin-right: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    border-radius: 4px;
+}
+
+#filter-sort select {
+    padding: 8px;
+    font-size: 14px;
+    cursor: pointer;
+    border: 1px solid var(--table-border-color);
+    border-radius: 4px;
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Task Table Styles */
+#task-list table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#task-list th,
+#task-list td {
+    padding: 8px;
+    border: 1px solid var(--table-border-color);
+    text-align: left;
+}
+
+#task-list th {
+    background-color: var(--primary-color);
+    color: var(--background-color);
+}
+
+#task-list td {
+    background-color: var(--background-color);
+    color: var(--text-color);
+}
+
+/* Action Buttons */
+#task-list button {
+    margin-right: 5px;
+    padding: 6px 12px;
+    background-color: var(--primary-color);
+    color: var(--background-color);
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+/* Completed Task Styles */
+.completed {
+    text-decoration: line-through;
+    opacity: 0.7;
+}
