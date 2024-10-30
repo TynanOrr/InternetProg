@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Meat Menu</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <script src="js/script.js" defer></script>
+</head>
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:10%;height:10%;">
+        <h1>Meats back on the Menu</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="menu.html">Menu</a></li>
+                <li><a href="tasks.html">Reports</a></li>
+                <li><a href="contact.html">Reservations</a></li>
+                <li><a href="about.html">About Us</a></li>
+            </ul>
+
+            <select onchange= "window.location = this.value;"> 
+                <option value="" selected="selected">Navigation</option>
+                <option value="index.html">Home</option> 
+                <option value="menu.html">Menu</option> 
+                <option value="tasks.html">Reports</option> 
+                <option value="contact.html">Reservations</option> 
+                <option value="about.html">About Us</option> 
+              </select>
+        </nav>
+        <button id="dark-mode-toggle">Dark Mode</button>
+    </header>
+
+    <h3>We make it our mission to have as many different types of meat available at all times if you want to know what our current speciels are check out our social Media </h3>
+
+    <table>
+        <tr>
+            <td>
+                <div class="container">
+                    <img src= "assets/beef.avif" alt= "BeefImage"style="width:40%;height:40%;">
+                    <div class="Beef">
+                        <h2>Beef</h2>
+                    </div>
+                </div>
+                <div class="container">
+                    <img src= "assets/Chicken.jpg" alt="Chicken Image"style="width:40%;height:40%;">
+                    <div class="Chicken">
+                        <h2>Chicken</h2>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src= "assets/Salad.jpg" alt="Salad Image"style="width:40%;height:40%;">
+                    <div class="Salad">
+                        <h2>Salad</h2>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="container">
+                    <img src= "assets/pork.webp" alt="Pork Image"style="width:40%;height:40%;">
+                    <div class="Pork">
+                        <h2>Pork</h2>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src= "assets/Fish.jpg" alt="Fish Image"style="width:40%;height:40%;">
+                    <div class="Fish">
+                        <h2>Fish</h2>
+                    </div>
+                </div>
+
+                <div class="container">
+                    <img src= "assets/Drinks.jpg" alt="Drinks Image"style="width:40%;height:40%;">
+                    <div class="Drinks">
+                        <h2>Drinks</h2>
+                    </div>
+                </div>
+            </td>
+        </tr>
+    </table>
+
+    <h2> We also have unlimited salads and non-alchoholic beverages</h2>
+
+    
+</body>
+    <!-- Footer -->
+    <footer>
+        <img src="assets/meatlogo.png" alt="MeatLogo" style="width:5%;height:5%;">
+        <p>&copy; 2024 Meat Buffet. All rights reserved.</p>
+        <p>Phone: (123) 456-7890</p>
+        <p>Email: Meat@restaurant.com</p>
+    </footer>
+</html>
